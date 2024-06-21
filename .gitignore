@@ -1,0 +1,5 @@
+.venv
+*/.env
+dbdata
+# Temporário
+desafio_indicium 
