@@ -1,5 +1,6 @@
 .venv
 */.env
 dbdata
-# Temporário
-desafio_indicium 
+details.txt
+airflow-docker/logs/*
+data/csv/ano-mes-dia

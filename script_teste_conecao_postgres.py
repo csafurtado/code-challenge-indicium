@@ -2,7 +2,8 @@ import psycopg2
 import dotenv, os
 
 
-dotenv.load_dotenv('.env')
+# dotenv.load_dotenv('.env')
+dotenv.load_dotenv('desafio_indicium/.env')
 
 # Configurações de conexão
 host = 'localhost'
