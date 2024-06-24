@@ -1,6 +1,6 @@
 version: 1
 default_environment: dev
-project_id: e622fd24-e413-4240-8b1d-3e9b141d953e
+project_id: 393b38a2-2d92-4d1f-ab57-40a56cfeac4f
 environments:
 - name: dev
 - name: staging
@@ -30,6 +30,21 @@ plugins:
     pip_url: git+https://github.com/MeltanoLabs/target-csv.git
     config:
       destination_path: ../data/csv/ano-mes-dia/
+  utilities:
+  - name: airflow
+    variant: apache
+    pip_url: git+https://github.com/meltano/airflow-ext.git@main apache-airflow==2.8.1
+      --constraint 
+      https://raw.githubusercontent.com/apache/airflow/constraints-2.8.1/constraints-no-providers-${MELTANO__PYTHON_VERSION}.txt
+    config:
+      core:
+        dags_folder: ../airflow-docker/dags
+      extension:
+        airflow_home: ../airflow-docker
+      webserver:
+        web_server_port: '44445'
+      scheduler:
+        child_process_log_directory: ../airflow-docker/logs
 jobs:
 - name: pipeline_extracao_local_csv
   tasks:

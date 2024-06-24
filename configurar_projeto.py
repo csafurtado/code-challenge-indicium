@@ -44,6 +44,5 @@ subprocess.run(["meltano", "config", "airflow", "set", "scheduler", "child_proce
 subprocess.run(["meltano", "job", "add", "pipeline_extracao_local_csv", "--tasks", f'"tap-csv target-csv"'])
 subprocess.run(["meltano", "job", "add", "pipeline_extracao_local_postgres", "--tasks", f'"tap-postgres target-csv"'])
 
-
-
+# # Executa o job do pipiline de extração
 # subprocess.run(["meltano", "run", "pipeline_extracao_local_postgres"])
